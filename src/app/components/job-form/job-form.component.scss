@@ -1,0 +1,124 @@
+// @import '~bootstrap/scss/bootstrap';
+
+// Customize Bootstrap variables (optional)
+$primary: #007bff;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+
+// Form container
+.form-container {
+  background-color: #f8f9fa; // Light background
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//   max-width: 250px; // Set the maximum width of the form
+  margin: 0 auto; // Center the form horizontally
+}
+
+// Form group styling
+.form-group {
+  margin-bottom: 20px;
+  position: relative; // For positioning feedback icons
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input.form-control,
+  textarea.form-control {
+    border: 2px solid #ced4da; // Light gray border
+    border-radius: 5px;
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+    }
+  }
+
+  // Validation feedback icons
+  .valid-feedback,
+  .invalid-feedback {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+
+  .valid-feedback {
+    color: $success;
+  }
+
+  .invalid-feedback {
+    color: $danger;
+  }
+}
+
+// Button styling
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+
+  // &:hover {
+  //   background-color: darken($primary, 10%);
+  //   border-color: darken($primary, 10%);
+  //   box-shadow: 0 0 10px rgba($primary, 0.5);
+  // }
+}
+
+// Animations
+.form-group {
+  animation: slide-up 0.5s ease-in-out;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input.form-control,
+textarea.form-control {
+  animation: zoom-in 0.5s ease-in-out;
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.btn-primary {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($primary, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($primary, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($primary, 0);
+  }
+}

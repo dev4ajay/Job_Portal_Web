@@ -1,0 +1,47 @@
+<div class="container">
+    <h2 class="mt-4 text-center">Send Message to {{ consultantName  || ""}}</h2>
+    <p class="text-center">Share your Correspondence Details to receive messages from {{ consultantName || ""  }} </p>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Enter Your Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid-feedback">
+          <small *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="contactForm.get('email')?.errors?.['email']">Invalid email format.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Enter Your Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="invalid-feedback">
+          <small>Name is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="mobile">Enter Mobile Number</label>
+        <input type="tel" id="mobile" class="form-control" formControlName="mobile">
+        <div *ngIf="contactForm.get('mobile')?.invalid && contactForm.get('mobile')?.touched" class="invalid-feedback">
+          <small *ngIf="contactForm.get('mobile')?.errors?.['required']">Mobile number is required.</small>
+          <small *ngIf="contactForm.get('mobile')?.errors?.['pattern']">Invalid mobile number format.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="serviceLocation">Your Service Location</label>
+        <input type="text" id="serviceLocation" class="form-control" formControlName="serviceLocation">
+      </div>
+  
+      <div class="form-group">
+        <label for="query">Enter Your Query</label>
+        <textarea id="query" class="form-control" formControlName="query" rows="4"></textarea>
+        <div *ngIf="contactForm.get('query')?.invalid && contactForm.get('query')?.touched" class="invalid-feedback">
+          <small *ngIf="contactForm.get('query')?.errors?.['maxlength']">Query exceeds 1000 characters.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mb-3" [disabled]="contactForm.invalid">SUBMIT</button>
+    </form>
+  </div>

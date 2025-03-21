@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold text-danger" href="#">
+      <img
+        src="assets/logo.png"
+        alt="Logo"
+        class="logo"
+        style="width: 130px; height: 70px"
+      />
+    
+    </a>
+
+    <!-- Toggle button for mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+    <fa-icon [icon]="isMenuOpen ? faTimes : faBars"></fa-icon> </button>
+ 
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/"   routerLinkActive="text-info">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about-us" routerLinkActive="text-primary">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/blog" routerLinkActive="text-primary">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/all-job" routerLinkActive="text-primary">All Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us" routerLinkActive="text-primary">Contact Us</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="btn btn-outline-primary me-2" routerLink="/login" routerLinkActive="text-primary">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <button class="btn btn-outline-danger me-2" (click)="logout()">Logout</button>
+        </li>
+        
+     
+     
+      </ul>
+    </div>
+  </div>
+</nav>

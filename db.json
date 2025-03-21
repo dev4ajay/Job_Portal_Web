@@ -1,0 +1,140 @@
+{
+  "jobs": [
+    {
+      "jobTitle": "Software Engineer",
+      "openings": 2,
+      "minExperience": 2,
+      "maxExperience": 5,
+      "genderPreference": "Any",
+      "minSalary": 50000,
+      "maxSalary": 100000,
+      "location": "India",
+      "hideSalary": false,
+      "jobDescription": "Develop and maintain software applications...",
+      "id": "14ee"
+    },
+    {
+      "id": "359e",
+      "jobTitle": "ReactJS Developer",
+      "openings": 1,
+      "minExperience": 1,
+      "maxExperience": 5,
+      "genderPreference": "Male",
+      "minSalary": 30000,
+      "maxSalary": 100000,
+      "location": "India",
+      "hideSalary": true,
+      "jobDescription": "i am react js developer"
+    },
+    {
+      "id": "9af4",
+      "jobTitle": "Urgent Opening For Actress Fresher (Female)",
+      "openings": 1,
+      "minExperience": 0,
+      "maxExperience": 5,
+      "genderPreference": "Female",
+      "minSalary": 30000,
+      "maxSalary": 100000,
+      "location": "USA",
+      "hideSalary": true,
+      "jobDescription": "hey!"
+    },
+    {
+      "id": "5839",
+      "jobTitle": "Walk-Ins Interview For Sales Representative",
+      "openings": 1,
+      "minExperience": 0,
+      "maxExperience": 5,
+      "genderPreference": "Male",
+      "minSalary": 30000,
+      "maxSalary": 100000,
+      "location": "UK",
+      "hideSalary": true,
+      "jobDescription": "hey"
+    },
+    {
+      "id": "6886",
+      "jobTitle": "Personal Secretary (Female)",
+      "openings": 3,
+      "minExperience": 1,
+      "maxExperience": 3,
+      "genderPreference": "Female",
+      "minSalary": 300000,
+      "maxSalary": 1000000,
+      "location": "India",
+      "hideSalary": true,
+      "jobDescription": "hey!"
+    },
+    {
+      "id": "213a",
+      "jobTitle": "Accounts Assistant",
+      "openings": 5,
+      "minExperience": 1,
+      "maxExperience": 4,
+      "genderPreference": "Male",
+      "minSalary": 400000,
+      "maxSalary": 1000000,
+      "location": "USA",
+      "hideSalary": true,
+      "jobDescription": "hey"
+    },
+    {
+      "id": "ed39",
+      "jobTitle": "Personal Secretary (Female)",
+      "openings": 1,
+      "minExperience": 0,
+      "maxExperience": 5,
+      "genderPreference": "Female",
+      "minSalary": 30000,
+      "maxSalary": 100000,
+      "location": "India",
+      "hideSalary": true,
+      "jobDescription": ""
+    },
+    {
+      "id": "a0cb",
+      "jobTitle": "React JS Developer",
+      "openings": 2,
+      "minExperience": 1,
+      "maxExperience": 3,
+      "genderPreference": "Male",
+      "minSalary": 30000,
+      "maxSalary": 100000,
+      "location": "USA",
+      "hideSalary": true,
+      "jobDescription": "hey"
+    }
+  ],
+  "login": [
+    {
+      "id": "1",
+      "email": "user1@example.com",
+      "password": "password1"
+    },
+    {
+      "id": "f89f",
+      "email": "dev4ajaykumar@gmail.com",
+      "password": "121212"
+    },
+    {
+      "id": "9757",
+      "email": "dev4ajaykumar@gmail.com",
+      "password": "121234"
+    },
+    {
+      "id": "0f5c",
+      "email": "ajay@gmail.com",
+      "password": "121212"
+    },
+    {
+      "id": "6df4",
+      "email": "dev4ajaykumar@gmail.com",
+      "password": "121212"
+    },
+    {
+      "id": "2243",
+      "email": "dev4ajaykumar@gmail.com",
+      "password": "121212"
+    }
+  ]
+}

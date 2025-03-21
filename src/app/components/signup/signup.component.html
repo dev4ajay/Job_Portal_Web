@@ -1,0 +1,92 @@
+<div class="signup-container">
+    <div class="signup-card">
+      <h2 class="animated-title">Create Your Account 🎉</h2>
+  
+      <!-- Signup Form -->
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        
+        <!-- Name Input -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            class="form-control" 
+            formControlName="name" 
+            placeholder="Enter your full name"
+          />
+          <div class="error-message" *ngIf="name?.invalid && name?.touched">
+            <span *ngIf="name?.errors?.['required']">Name is required.</span>
+          </div>
+        </div>
+  
+        <!-- Email Input -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            class="form-control" 
+            formControlName="email" 
+            placeholder="Enter your email"
+          />
+          <div class="error-message" *ngIf="email?.invalid && email?.touched">
+            <span *ngIf="email?.errors?.['required']">Email is required.</span>
+            <span *ngIf="email?.errors?.['email']">Invalid email format.</span>
+          </div>
+        </div>
+  
+        <!-- Password Input -->
+        <div class="form-group password-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input 
+              [type]="showPassword ? 'text' : 'password'"
+              id="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Create a password"
+            />
+            <button type="button" class="toggle-password" (click)="togglePassword()">
+              <i class="bi" [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+            </button>
+          </div>
+          <div class="error-message" *ngIf="password?.invalid && password?.touched">
+            <span *ngIf="password?.errors?.['required']">Password is required.</span>
+            <span *ngIf="password?.errors?.['minlength']">
+              Password must be at least 6 characters.
+            </span>
+          </div>
+        </div>
+  
+        <!-- Confirm Password Input -->
+        <div class="form-group password-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="password-wrapper">
+            <input 
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              id="confirmPassword"
+              class="form-control"
+              formControlName="confirmPassword"
+              placeholder="Confirm your password"
+            />
+            <button type="button" class="toggle-password" (click)="toggleConfirmPassword()">
+              <i class="bi" [ngClass]="showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'"></i>
+            </button>
+          </div>
+          <div class="error-message" *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+            <span *ngIf="confirmPassword?.errors?.['required']">Confirm Password is required.</span>
+            <span *ngIf="signupForm.hasError('passwordMismatch')">Passwords do not match.</span>
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="signupForm.invalid">
+          Sign Up
+        </button>
+      </form>
+  
+      <p class="login-link">Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+  

@@ -1,0 +1,11 @@
+<div class=" container"><div class="values">
+  <h2 class="mt-5 mb-4 text-white">Our Core Values</h2>
+  <div class="value-list mt-5 mb-4">
+    <div class="value-item" *ngFor="let value of values">
+      <i [class]="value.icon"></i>
+      <h3>{{ value.title }}</h3>
+      <p>{{ value.description }}</p>
+    </div>
+  </div>
+</div>
+</div>

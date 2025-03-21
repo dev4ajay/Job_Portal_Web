@@ -1,0 +1,77 @@
+// blog.component.scss
+.blog-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  
+    .hero {
+      background: linear-gradient(135deg, #4162b2, #4162b2);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      animation: fadeIn 1s ease-out;
+  
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+    }
+  
+    .blog-posts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 20px;
+      gap: 30px;
+  
+      .post {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+  
+        .post-image {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+          margin-bottom: 15px;
+        }
+  
+        h3 {
+          margin-bottom: 10px;
+        }
+  
+        .post-date {
+          color: #777;
+          margin-bottom: 10px;
+        }
+  
+        .read-more {
+          color: #4162b2;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

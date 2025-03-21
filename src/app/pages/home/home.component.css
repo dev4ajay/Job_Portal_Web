@@ -1,0 +1,51 @@
+.logo {
+  max-width: 100%; /* Ensure it doesn't overflow */
+  height: auto; /* Keep aspect ratio */
+  -o-object-fit: contain;
+     object-fit: contain; /* Maintain full visibility */
+}
+
+.navbar {
+  padding: 10px 0;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+.navbar-nav .btn {
+  font-size: 14px;
+}
+
+.btn-warning {
+  background-color: #ffd700;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+}
+
+/* Apply the style only for screens smaller than 768px (typical breakpoint for mobile) */
+@media (max-width: 992px) {
+  .navbar-toggler:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+  }
+  .navbar-toggler:focus :focus {
+    outline: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-toggler:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+  }
+  .navbar-toggler:focus :focus {
+    outline: none;
+  }
+}/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,16 @@
+<div class="container blog-page mt-4 mb-2">
+    <div class="hero">
+      <h1>Our Blog</h1>
+      <p>Insights and tips for your career journey.</p>
+    </div>
+
+    <div class="blog-posts">
+      <div class="post" *ngFor="let post of posts">
+        <img [src]="post.imageUrl" alt="Blog Post Image" class="post-image">
+        <h3>{{ post.title }}</h3>
+        <p class="post-date">{{ post.date }}</p>
+        <p>{{ post.excerpt }}</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+footer {
+  background: linear-gradient(to right, #4162b2, #4162b2);
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.social-icons a {
+  font-size: 1.25rem;
+}
+
+.justify {
+  text-align: justify !important;
+}/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,21 @@
+<div class="container ">
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="text-center my-4">Featured Placement Consultants</h2>
+  </div>
+
+  <div *ngFor="let consultant of consultants" class="col-md-3 col-sm-6 mb-4">
+    <a [routerLink]="['/job-form', consultant.name]" class="consultant-card-link"> 
+      <div class="consultant-card">
+        <img
+          [src]="consultant.logo"
+          alt="{{ consultant.name }}"
+          class="consultant-img"
+        />
+        <h5 class="mt-2">{{ consultant.name }}</h5>
+        <p class="text-muted">{{ consultant.location }}</p>
+      </div>
+    </a>
+  </div>
+</div>
+</div>

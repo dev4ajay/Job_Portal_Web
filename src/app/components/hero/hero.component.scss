@@ -1,0 +1,22 @@
+// Define a custom variable for height
+$custom-height: 200px; // You can change this value to whatever height you need
+
+// Apply this custom height to a specific class or element
+.custom-height {
+  height: $custom-height;
+
+height: 60vh;
+}
+
+// You can also apply different heights based on breakpoints (responsive design)
+@media (max-width: 768px) {
+  .custom-height {
+    height: 300px; // Set a smaller height for mobsile screens
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-height {
+    height: 200px; // Set an even smaller height for very small screens
+  }
+}

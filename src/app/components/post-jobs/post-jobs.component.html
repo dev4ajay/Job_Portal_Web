@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="post-job">
+    <h2 class="text-center">
+      {{ editingJobId ? 'Edit Job Post' : 'Create a New Job Post' }}
+    </h2>
+
+    <div class="post-job-container">
+      <form [formGroup]="jobForm" (ngSubmit)="submitJob()" class="job-form">
+        
+        <div class="form-group">
+          <label for="job_title">Job Title</label>
+          <input id="job_title" type="text" formControlName="job_title" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input id="location" type="text" formControlName="location" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="number_of_openings">Number of Openings</label>
+          <input id="number_of_openings" type="number" formControlName="number_of_openings" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+          <label for="min_experience">Min Experience (years)</label>
+          <input id="min_experience" type="number" formControlName="min_experience" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="max_experience">Max Experience (years)</label>
+          <input id="max_experience" type="number" formControlName="max_experience" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="min_salary">Min Salary</label>
+          <input id="min_salary" type="number" formControlName="min_salary" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+          <label for="max_salary">Max Salary</label>
+          <input id="max_salary" type="number" formControlName="max_salary" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+          <label for="start_time">Start Date</label>
+          <input id="start_time" type="date" formControlName="start_time" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="end_time">End Date</label>
+          <input id="end_time" type="date" formControlName="end_time" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Job Description</label>
+          <textarea id="description" formControlName="description" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="jobForm.invalid || jobForm.pristine">
+          {{ editingJobId ? 'Update Job' : 'Post Job' }}
+        </button>
+
+    
+      </form>
+    </div>
+  </div>
+</div>

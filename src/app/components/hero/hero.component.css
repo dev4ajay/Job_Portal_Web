@@ -1,0 +1,15 @@
+.custom-height {
+  height: 200px;
+  height: 60vh;
+}
+
+@media (max-width: 768px) {
+  .custom-height {
+    height: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .custom-height {
+    height: 200px;
+  }
+}/*# sourceMappingURL=hero.component.css.map */

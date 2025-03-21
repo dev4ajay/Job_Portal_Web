@@ -1,0 +1,38 @@
+<div class="container about-us-page mt-4 mb-2">
+    <div class="hero ">
+      <h1>About Us: Empowering Your Career Journey</h1>
+      <p>    At Smart Greek Consultancy, we are committed to bridging the gap
+        between talented professionals and top employers. As a dedicated job
+        placement agency, we specialize in connecting job seekers with the
+        right opportunities, helping them build rewarding careers.</p>
+    </div>
+
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>Our mission is simple: to empower individuals by matching them with roles that align with their skills, aspirations, and career goals. Whether you're looking for your first job, a career transition, or a better opportunity, we're here to guide you every step of the way</p>
+    </div>
+
+    <div class="team">
+      <h2>Meet Our Team</h2>
+      <div class="team-members">
+        <div class="team-member" *ngFor="let member of teamMembers">
+          <img [src]="member.imageUrl" alt="{{ member.name }}" class="member-image">
+          <h3>{{ member.name }}</h3>
+          <p class="member-title">{{ member.title }}</p>
+          <p class="member-bio">{{ member.bio }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="values mb-3">
+      <h2 class="mt-5 mb-4 text-white">Our Core Values</h2>
+      <div class="value-list mt-5 mb-4">
+        <div class="value-item" *ngFor="let value of values">
+          <i [class]="value.icon"></i>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>

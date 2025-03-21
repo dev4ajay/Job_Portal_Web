@@ -1,0 +1,101 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.signup-container .signup-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+.signup-container .signup-card .animated-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4162b2;
+  animation: fadeIn 1s ease-in-out;
+}
+.signup-container .signup-card .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+.signup-container .signup-card .form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+.signup-container .signup-card .form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.signup-container .signup-card .form-group .form-control:focus {
+  border-color: #ff6f91;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(255, 111, 145, 0.5);
+}
+.signup-container .signup-card .form-group .password-wrapper {
+  position: relative;
+  width: 100%;
+}
+.signup-container .signup-card .form-group .password-wrapper .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.signup-container .signup-card .form-group .error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.signup-container .signup-card .btn-primary {
+  background: #ff6f91;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.signup-container .signup-card .btn-primary:hover {
+  background: #ff5069;
+}
+.signup-container .signup-card .btn-primary:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}
+.signup-container .signup-card .login-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.signup-container .signup-card .login-link a {
+  color: #ff6f91;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.signup-container .signup-card .login-link a:hover {
+  color: #ff5069;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=signup.component.css.map */

@@ -1,0 +1,26 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.image-grid .image-grid-item img {
+  width: 100%;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.text-success { /* Corrected class name */
+  color: #4162b2 !important;
+}
+
+.btn-succes {
+  background-color: #4162b2;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=job-talent.component.css.map */

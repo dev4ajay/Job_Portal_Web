@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="jobs-container">
+    <div class="hero text-white">
+      <h1 class="text-white">All Jobs</h1>
+      <p class="text-white">We're here to help you. Reach out with any questions.</p>
+      <div class="search-container">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search jobs..."
+          [(ngModel)]="searchTerm"
+          (input)="filterJobs()"
+        />
+      </div>
+    </div>
+
+    <div class="sorting-container d-flex gap-3 align-items-center">
+      <!-- Salary Sorting Dropdown -->
+      <select class="form-select custom-select" [(ngModel)]="selectedSortOrder" (change)="sortJobsBySalary()">
+        <option value="" disabled selected>Sort by Salary</option>
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+      </select>
+    
+      <!-- Date Sorting Dropdown -->
+      <select class="form-select custom-select" [(ngModel)]="selectedDateSort" (change)="sortJobsByDate()">
+        <option value="" disabled selected>Sort by Date</option>
+        <option value="asc">Oldest First</option>
+        <option value="desc">Newest First</option>
+      </select>
+    </div>
+
+    <div *ngIf="loading">Loading jobs...</div>
+
+    <div *ngIf="!loading && filteredJobs.length === 0">
+      <p>No jobs found.</p>
+    </div>
+
+    <div class="jobs-grid" *ngIf="!loading && filteredJobs.length > 0">
+      <div *ngFor="let job of filteredJobs" class="job-card " (click)="openApplyForm() ">
+        <div class="job-header">
+          <h3>{{ job.job_title }}</h3>
+          <div class="job-initials" [style.backgroundColor]="'#4162b2'">
+            {{ job.job_title.charAt(0) }}
+          </div>
+        </div>
+
+        <p class="country">
+          <i class="fas fa-map-marker-alt"></i> {{ job.location }}
+        </p>
+        
+        <p class="experience">
+          <i class="fas fa-briefcase"></i> {{ job.min_experience }} - {{ job.max_experience }} yrs
+        </p>
+        <p class="salary">
+          <i class="fas fa-money-bill"></i> {{ job.min_salary }} - {{ job.max_salary }}        
+        </p>
+        <p class="date">
+          <i class="fas fa-calendar-alt"></i> {{ job.start_time }} - {{ job.end_time }}
+        </p>
+        <p class="description">
+          <i class="fas fa-clipboard"></i>
+          {{ job.description.length > 100 ? job.description.substring(0, 100) + '...' : job.description }}
+        </p>
+
+        <div class="button-group" *ngIf="userRole === 'admin'">
+          <button class="edit-btn btn btn-primary"  (click)="editJob(job._id)">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="delete-btn btn btn-danger"  (click)="DeleteJob(job._id)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.why-choose-us {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+.why-choose-us .section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.why-choose-us .section-subtitle {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+.why-choose-us .reason-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.why-choose-us .reason-card .icon-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #4162b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  transition: background-color 0.3s ease;
+}
+.why-choose-us .reason-card .icon-container i {
+  font-size: 3rem;
+  color: #fff;
+}
+.why-choose-us .reason-card .reason-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.why-choose-us .reason-card .reason-description {
+  font-size: 1rem;
+  color: #6c757d;
+}
+.why-choose-us .reason-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.why-choose-us .reason-card:hover .icon-container {
+  background-color: #343a40;
+}/*# sourceMappingURL=why-choose-us.component.css.map */
