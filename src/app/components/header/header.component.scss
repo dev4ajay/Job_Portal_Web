@@ -65,4 +65,15 @@
       }
     }
   }
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
   

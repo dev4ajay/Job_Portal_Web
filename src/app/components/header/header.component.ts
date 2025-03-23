@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -18,9 +18,11 @@ export class HeaderComponent{
   faBars = faBars;
   faTimes = faTimes;
   isMenuOpen = false;
-
+  @ViewChild('navbarNav', { static: false }) navbarNav!: ElementRef;
   constructor(private router: Router) {}
-
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
   ngOnInit() {
     this.checkLoginStatus();
     // Initialize the mobile menu toggle
@@ -50,6 +52,7 @@ export class HeaderComponent{
     localStorage.removeItem('userRole');     // Optionally remove the user role as well
     this.isLoggedIn = false;
     this.router.navigate(['/']);
+    this.closeNavbar();
   }
   
 
@@ -68,6 +71,17 @@ export class HeaderComponent{
     if (!event.target || !(event.target as HTMLElement).closest('.dropdown')) {
       this.isJobsDropdownOpen = false;
       this.isCareerDropdownOpen = false;
+    }
+  }
+ 
+
+  closeNavbar() {
+    if (this.navbarNav) {
+      const navbar = this.navbarNav.nativeElement;
+      if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show');
+      }
+      this.isMenuOpen = false; // Ensure toggle state is updated
     }
   }
 

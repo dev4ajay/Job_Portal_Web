@@ -55,16 +55,16 @@ export class LoginComponent {
   // login.component.ts
 this.authService.login(this.loginForm.value).subscribe({
   next: (response) => {
-    console.log('Login Response:', response); // Debugging
-    console.log('Login Response:', response); // Debugging
+    console.log('Login Response:', response); 
+    console.log('Login Response:', response); 
     if (response && response.token) {
-      // Always save the token normally
+    
       localStorage.setItem('token', response.token);
       this.authService.saveToken(response.token);
       const userRole = this.authService.getUserRole();
-      console.log('User Role:', userRole); // Check if role is stored
+      console.log('User Role:', userRole); 
     
-      // If admin, also store the token under 'admin'
+    
       if (userRole === 'admin') {
         localStorage.setItem('admin', response.token);
       }
@@ -86,7 +86,7 @@ this.authService.login(this.loginForm.value).subscribe({
     
   },
   error: (error) => {
-    console.error('Login Error:', error); // Debugging
+    console.error('Login Error:', error); 
     // ...
   },
 });
