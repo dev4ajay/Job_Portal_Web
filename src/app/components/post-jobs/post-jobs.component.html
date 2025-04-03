@@ -57,9 +57,16 @@
           <textarea id="description" formControlName="description" class="form-control" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="jobForm.invalid || jobForm.pristine">
-          {{ editingJobId ? 'Update Job' : 'Post Job' }}
+        <button type="submit" class="btn btn-primary" [disabled]="jobForm.invalid || jobForm.pristine || isLoading">
+          <span *ngIf="isLoading">
+            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+            Processing...
+          </span>
+          <span *ngIf="!isLoading">
+            {{ editingJobId ? 'Update Job' : 'Post Job' }}
+          </span>
         </button>
+        
 
     
       </form>

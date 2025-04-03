@@ -55,14 +55,12 @@ export class LoginComponent {
   // login.component.ts
 this.authService.login(this.loginForm.value).subscribe({
   next: (response) => {
-    console.log('Login Response:', response); 
-    console.log('Login Response:', response); 
+   
     if (response && response.token) {
     
       localStorage.setItem('token', response.token);
       this.authService.saveToken(response.token);
       const userRole = this.authService.getUserRole();
-      console.log('User Role:', userRole); 
     
     
       if (userRole === 'admin') {
@@ -70,17 +68,17 @@ this.authService.login(this.loginForm.value).subscribe({
       }
       
       this.snackBar.open('Login successful!', 'Close', {
-        duration: 2000,
+        duration: 3000,
         panelClass: ['success-snackbar'],
       });
       if (userRole === 'admin') {
         setTimeout(() => {
           this.router.navigate(['/post-a-job']);
-        }, 2000);
+        }, 3000);
       } else {
         setTimeout(() => {
           this.router.navigate(['/all-job']);
-        }, 2000);
+        }, 3000);
       }
     }
     

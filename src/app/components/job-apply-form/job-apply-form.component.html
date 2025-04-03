@@ -51,8 +51,14 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary mb-3" [disabled]="contactForm.invalid">SUBMIT</button>
-    </form>
+      <button type="submit" class="btn btn-primary mb-3" [disabled]="contactForm.invalid || isLoading">
+        <span *ngIf="isLoading">
+          <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+          Submitting...
+        </span>
+        <span *ngIf="!isLoading">SUBMIT</span>
+      </button>
+          </form>
  
   </div>
 </div>

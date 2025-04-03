@@ -45,9 +45,13 @@
   
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="isLoading">
-          <span *ngIf="isLoading">Loading...</span>
+          <span *ngIf="isLoading">
+            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+            Loading...
+          </span>
           <span *ngIf="!isLoading">Login</span>
         </button>
+        
       
     
      

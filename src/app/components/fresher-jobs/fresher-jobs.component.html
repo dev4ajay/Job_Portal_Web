@@ -26,8 +26,11 @@
       </select>
     </div>
 
-    <!-- Loading Indicator -->
-    <div *ngIf="loading">Loading jobs...</div>
+    <div *ngIf="loading" class="jobs-loader">
+      <div class="spinner"></div>
+      <p>Loading jobs...</p>
+    </div>
+  
 
     <!-- No Jobs Found -->
     <div *ngIf="!loading && filteredJobs.length === 0">
@@ -46,7 +49,10 @@
         <p class="country"><i class="fas fa-map-marker-alt"></i> {{ job.location }}</p>
         <p class="experience"><i class="fas fa-briefcase"></i> {{ job.min_experience }} - {{ job.max_experience }} yrs</p>
         <p class="salary"><i class="fas fa-money-bill"></i> {{ job.min_salary }} - {{ job.max_salary }}</p>
-        <p class="salary"><i class="fas fa-calendar-alt"></i> {{ job.start_time }} - {{ job.end_time }}</p>
+        <p class="salary">        <i class="fas fa-calendar-alt"></i> {{ job.start_time | date: 'dd MMM yyyy' }} - {{ job.end_time | date: 'dd MMM yyyy' }}
+        </p>
+      
+     
         <p class="description">
           <i class="fas fa-clipboard"></i> {{ job.description.length > 100 ? job.description.substring(0, 100) + '...' : job.description }}
         </p>

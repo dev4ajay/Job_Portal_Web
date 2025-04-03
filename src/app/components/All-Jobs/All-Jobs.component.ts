@@ -45,19 +45,21 @@ export class AllJobsComponent {
 
 
   getJobs() {
+    this.loading = true; // Show loader
     this.jobService.getJobPostings().subscribe({
       next: (response) => {
         if (response && response.success) {
           this.jobs = response.data;
           this.filteredJobs = [...this.jobs]; 
-          this.loading = false;
         }
+        this.loading = false; // Hide loader after fetching jobs
       },
       error: () => {
-        this.loading = false;
+        this.loading = false; // Hide loader even on error
       },
     });
   }
+  
 
   filterJobs() {
     this.filteredJobs = this.jobs.filter(job =>
